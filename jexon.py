@@ -1,8 +1,6 @@
 import json
-import re
 
 def jexon(text):
-    valid_jsons = []
     start_pos = None
     braces_count = 0
     
@@ -17,13 +15,12 @@ def jexon(text):
                 potential_json = text[start_pos:i+1]
                 try:
                     json_object = json.loads(potential_json)
-                    valid_jsons.append(json_object)
+                    yield json_object  # Yield the JSON object instead of appending to a list
                 except json.JSONDecodeError:
                     pass
                 start_pos = None
-    
-    return valid_jsons
 
-# Test with your text
-json_objects = jexon(raw_result)
-print(json_objects)
+# Example usage
+raw_result = "Some text before JSON {\"key\": \"value\"} and some after."
+for json_object in jexon(raw_result):
+    print(json_object)
