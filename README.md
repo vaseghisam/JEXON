@@ -26,7 +26,6 @@ print(json_objects)
 ## Dependencies
 ```python
 import json
-import re
 ```
 
 ## How It Works
