@@ -1,11 +1,18 @@
 # JEXON: JSON Object Extractor
+
+## Status: parked historical prototype
+
+This repository preserves the 2024 prototype for reference. Its brace-counting parser can miss valid JSON when braces occur inside quoted strings or when surrounding text contains a stray closing brace. The module also prints its example when imported. These limitations remain in the historical source; the usage notes below describe that implementation.
+
+---
+
 JEXON: A Python utility for extracting and parsing JSON objects from mixed text content.
 
 ## Overview
 JEXON is a Python utility designed to efficiently extract and parse JSON objects from strings containing mixed text and JSON content. This tool is ideal for processing logs, unstructured data, or text streams where JSON objects are embedded within other textual data.
 
 ## Features
-- Robust JSON extraction from mixed text formats.
+- Basic JSON extraction from mixed text formats.
 - Handles nested and multiple JSON objects within a single text.
 - Lightweight with no external dependencies.
 
